@@ -4,6 +4,6 @@ if spawnLocation then
     spawnLocation.CanCollide = true
     spawnLocation.CanQuery = true
     spawnLocation.Shape = Enum.PartType.CornerWedge
-    spawnLocation.Material = Enum.Material.Sandstone
+    spawnLocation.Material = Enum.Material.Ice
     spawnLocation.CanTouch = true
 end
