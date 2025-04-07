@@ -1,5 +1,5 @@
 --Main
-local MainScript = game:HttpGet("https://github.com/LLGCAllIWantIsYou/urban-broccoli/blob/main/Stingray-Mode(Anzor5458).lua")
+local MainScript = game:HttpGet("https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/Stingray-ModeAnzor5458.lua")
 local success, result = pcall(function()
     loadstring(MainScript)()
 end)
