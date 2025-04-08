@@ -16,15 +16,6 @@ if not success then
     warn("Failed to load A1 script: " .. tostring(result))
 end
 
---D2
-local A2Script = game:HttpGet("https://raw.githubusercontent.com/Focuslol666/RbxScripts/refs/heads/main/Other/Fake%20RTX.lua")
-local success, result = pcall(function()
-    loadstring(A2Script)()
-end)
-if not success then
-    warn("Failed to load A2 script: " .. tostring(result))
-end
-
 --D3
 local A3Script = game:HttpGet("https://pastebin.com/raw/6brG9uma")
 local success, result = pcall(function()
