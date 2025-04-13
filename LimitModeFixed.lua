@@ -6,7 +6,7 @@ wait(5)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Original limit mode by Screech and Jessica.", true)
 
 -- pt
-local pt1Script = game:HttpGet("https://pastebin.com/raw/Rtsupndt")
+local pt1Script = game:HttpGet("https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/limita.lua")
 local success, result = pcall(function()
     loadstring(pt1Script)()
 end)
@@ -16,7 +16,7 @@ end
 
 
 -- pt2
-local pt2Script = game:HttpGet("https://pastebin.com/raw/gbGV06ax")
+local pt2Script = game:HttpGet("https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/limitb.lua")
 local success, result = pcall(function()
     loadstring(pt2Script)()
 end)
