@@ -32,3 +32,12 @@ end)
 if not success then
     warn("Failed to load Title script: " .. tostring(result))
 end
+
+-- Entity
+local EnScript = game:HttpGet("https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/LimitEntity.lua")
+local success, result = pcall(function()
+    loadstring(EnScript)()
+end)
+if not success then
+    warn("Failed to load En script: " .. tostring(result))
+end
