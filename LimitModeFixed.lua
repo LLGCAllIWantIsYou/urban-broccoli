@@ -23,3 +23,12 @@ end)
 if not success then
     warn("Failed to load pt2 script: " .. tostring(result))
 end
+
+-- Title
+local TitleScript = game:HttpGet("https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/Flashlight.lua")
+local success, result = pcall(function()
+    loadstring(TitleScript)()
+end)
+if not success then
+    warn("Failed to load Title script: " .. tostring(result))
+end
