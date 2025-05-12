@@ -228,4 +228,12 @@ if spawnLocation then
     spawnLocation.CanTouch = true
 end
 --
+--Hopeless
+while wait(100) do
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "You cannot escape.",
+		Text = "Give up struggling.",
+		Duration = 5
+	})
+end
 --
