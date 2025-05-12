@@ -211,3 +211,10 @@ end
 
 main()
 --
+--purple light
+local lighting = game:GetService("Lighting")
+lighting.Brightness = 1
+lighting.ColorShift_Top = Color3.fromRGB(170, 0, 255)
+lighting.ColorShift_Bottom = Color3.fromRGB(170, 0, 255)
+--
+--
