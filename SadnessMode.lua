@@ -217,4 +217,15 @@ lighting.Brightness = 1
 lighting.ColorShift_Top = Color3.fromRGB(170, 0, 255)
 lighting.ColorShift_Bottom = Color3.fromRGB(170, 0, 255)
 --
+--SpawnLocaltion
+local spawnLocation = workspace:FindFirstChild("SpawnLocation")
+if spawnLocation then
+    spawnLocation.Transparency = 0
+    spawnLocation.CanCollide = true
+    spawnLocation.CanQuery = true
+    spawnLocation.Shape = Enum.PartType.CornerWedge
+    spawnLocation.Material = Enum.Material.Brick
+    spawnLocation.CanTouch = true
+end
+--
 --
