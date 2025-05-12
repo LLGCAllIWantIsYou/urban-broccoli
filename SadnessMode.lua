@@ -180,4 +180,34 @@ while true do
         end
     end
 end
---to be continued
+--
+--Strange shape
+local function updateRoom(room)
+    local dropCeilingModel = room.Parts.DropCeiling.Model
+    if dropCeilingModel:FindFirstChild("Ceiling") then
+        dropCeilingModel.Ceiling.Shape = Enum.PartType.Ball
+    end
+
+    if room.Parts:FindFirstChild("Floor") then
+        room.Parts.Floor.Shape = Enum.PartType.Wedge
+    end
+
+    for _, part in ipairs(room.Parts:GetChildren()) do
+        if part.Name == "Wall" and part:IsA("BasePart") then
+            part.Shape = Enum.PartType.Cylinder
+        end
+    end
+end
+
+local function main()
+    while true do
+        local newRoomValue = game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        local newRoom = workspace.CurrentRooms[newRoomValue]
+        if newRoom then
+            updateRoom(newRoom)
+        end
+    end
+end
+
+main()
+--
