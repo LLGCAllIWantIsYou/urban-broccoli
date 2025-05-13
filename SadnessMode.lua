@@ -52,6 +52,18 @@ coroutine.wrap(function()
 loadstring(game:HttpGet('https://pastebin.com/raw/QZM7mnWJ'))()
     end
 end)()
+
+--
+-- OverseerEyes
+coroutine.wrap(function()
+    while true do
+        wait(math.random(221,780))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/OverseerEyes.lua'))()
+    end
+end)()
+
 --
 --Hard Pinkie
 coroutine.wrap(function()
