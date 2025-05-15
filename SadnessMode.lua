@@ -167,6 +167,10 @@ end
 --
 -- H1ID3
 game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.HideMonster.Scare.SoundId = "rbxassetid://9126213741"
+--Fire
+game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.Healthbar.Effects.Fire.Visible = true
+--InFiredamp
+game.Players.LocalPlayer.PlayerGui.MainUI.MainFrame.Healthbar.Effects.InFiredamp.Visible = true
 --Earthquake
 coroutine.wrap(function()
     while true do
