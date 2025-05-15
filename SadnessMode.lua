@@ -310,10 +310,10 @@ coroutine.wrap(function()
 
 end)()
 --
---Cave ambience
+--Winter ambience
 local sound = Instance.new("Sound")
 
-sound.SoundId = "rbxassetid://273398061"
+sound.SoundId = "rbxassetid://6046340391"
 
 sound.Volume = 1
 
