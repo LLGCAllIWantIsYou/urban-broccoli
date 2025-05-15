@@ -71,6 +71,16 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LLGCAllIWantIsYou/urb
 end)()
 
 --
+-- Hunter
+coroutine.wrap(function()
+    while true do
+        wait(521)
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(60)
+        loadstring(game:HttpGet('https://pastebin.com/raw/5vLfqSWa'))()
+    end
+end)()
+--
 --Hard Pinkie
 coroutine.wrap(function()
     while true do
