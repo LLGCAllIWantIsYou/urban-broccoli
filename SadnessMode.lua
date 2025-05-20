@@ -91,6 +91,16 @@ loadstring(game:HttpGet('https://pastebin.com/raw/Z1zeP2iD'))()
     end
 end)()
 --
+-- Galena Remake
+coroutine.wrap(function()
+    while true do
+        wait(620)
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(100)
+        loadstring(game:HttpGet('https://pastebin.com/raw/JYGNywdh'))()
+    end
+end)()
+--
 --A258
 coroutine.wrap(function()
     while true do
