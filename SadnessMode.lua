@@ -71,6 +71,38 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LLGCAllIWantIsYou/urb
 end)()
 
 --
+--Dear(A variant of dread)
+coroutine.wrap(function()
+    while true do
+        wait(math.random(300,1080))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LLGCAllIWantIsYou/urban-broccoli/refs/heads/main/Dear.lua'))()
+    end
+end)()
+
+--Materials
+coroutine.wrap(function()
+    while true do
+        wait(math.random(60,400))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(1)
+loadstring(game:HttpGet('https://pastebin.com/raw/p3LXj0Lx'))()
+    end
+end)()
+
+--
+-- Colorful
+coroutine.wrap(function()
+    while true do
+        wait(math.random(91,666))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(1)
+loadstring(game:HttpGet('https://pastebin.com/raw/MXW9rVV3'))()
+    end
+end)()
+
+--
 -- Hunter
 coroutine.wrap(function()
     while true do
