@@ -1,3 +1,26 @@
+--Warning
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer.PlayerGui
+local WarningQueue = PlayerGui.MainUI.MainFrame.WarningQueue
+
+local customText = "˃̣̣̥᷄⌓˂̣̣̥᷅"
+
+WarningQueue.Text = customText
+WarningQueue.Visible = true
+
+WarningQueue.AnchorPoint = Vector2.new(0.5, 0.5)
+WarningQueue.Position = UDim2.new(0.5, 0, 0.5, 0)
+
+local delayTime = 5
+
+delay(delayTime, function()
+    for alpha = 1, 0, -0.1 do
+        WarningQueue.TextTransparency = 1 - alpha
+        wait()
+    end
+    WarningQueue.Visible = false
+end)
 --CrawlSpace
 function GitPNG(GithubImg,ImageName)
 	local url=GithubImg
@@ -373,7 +396,7 @@ local sound = Instance.new("Sound")
 
 sound.SoundId = "rbxassetid://6046340391"
 
-sound.Volume = 1
+sound.Volume = 0.5
 
 sound.Looped = true
 
