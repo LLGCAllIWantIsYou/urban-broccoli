@@ -1,5 +1,3 @@
-game.ReplicatedStorage.ClientModules.EntityModules.Void.Sound.SoundId =  "rbxassetid://3359047385"
-
 local function runEvery180Seconds()
     local a = require(game.ReplicatedStorage.ClientModules.EntityModules.Void).stuff(
         require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
