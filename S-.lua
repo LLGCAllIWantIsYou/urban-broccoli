@@ -6,7 +6,7 @@ local function updateRoom(room)
             local stinker = sign:FindFirstChild("Stinker")
             if stinker then
                 if stinker:IsA("TextLabel") then
-                    stinker.Text = "S-" .. stinker.Text
+                    stinker.Text = "X-" .. stinker.Text
                 end
 
                 local highlight = stinker:FindFirstChild("Highlight")
