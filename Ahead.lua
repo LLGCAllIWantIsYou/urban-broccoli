@@ -19,7 +19,7 @@ local entity = spawner.Create({
         Repair = true
     },
     Earthquake = {
-        Enabled = false
+        Enabled = true
     },
     CameraShake = {
         Enabled = true,
@@ -102,7 +102,16 @@ entity:SetCallback("OnRebounding", function(startOfRebound)
 end)
 
 entity:SetCallback("OnDespawning", function()
-    print("Entity is despawning")
+    --From Muhammad old Nightmare(hardcore)mode,i and my friends fixed it.
+local TweenService = game:GetService("TweenService")
+local LLGC = game.Lighting.MainColorCorrection.Contrast
+
+local Sorry = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(1), {Contrast = 0.45})
+local FOCUS = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(5), {Contrast = LLGC})
+
+Sorry:Play()
+Sorry.Completed:Connect(function() FOCUS:Play() end)
+        
 end)
 
 entity:SetCallback("OnDespawned", function()
