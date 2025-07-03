@@ -15,9 +15,10 @@ bg.BackgroundTransparency = 0
 bg.Parent = gui
 
 local title = Instance.new("TextLabel")
+title.RichText = true
 title.Size = UDim2.new(1, 0, 0.2, 0)
 title.Position = UDim2.new(0, 0, 0.15, 0)
-title.Text = "WARNING"
+title.Text = "<s>WARNING</s>"
 title.TextColor3 = Color3.new(1, 0, 0)
 title.TextScaled = true
 title.Font = Enum.Font.Arcade
