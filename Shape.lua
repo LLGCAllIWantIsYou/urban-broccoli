@@ -1,3 +1,4 @@
+
 local function updateRoom(room)
     local dropCeilingModel = room.Parts.DropCeiling.Model
     if dropCeilingModel:FindFirstChild("Ceiling") then
@@ -16,16 +17,22 @@ local function updateRoom(room)
 end
 
 local function main()
-    local latestRoomValue = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
-    local room = workspace.CurrentRooms[latestRoomValue]
-    updateRoom(room)
+    while true do
+        local success, newRoomValue = pcall(function()
+            return game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        end)
 
-    game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function(newRoomValue)
-        local newRoom = workspace.CurrentRooms[newRoomValue]
-        if newRoom then
-            updateRoom(newRoom)
+        if success then
+            pcall(function()
+                local newRoom = workspace.CurrentRooms[newRoomValue]
+                if newRoom then
+                    updateRoom(newRoom)
+                end
+            end)
+        else
+            break
         end
-    end)
+    end
 end
 
 main()
