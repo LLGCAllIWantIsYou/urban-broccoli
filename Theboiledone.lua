@@ -10,7 +10,7 @@ local entityModel = game:GetObjects("rbxassetid://138245134546895")[1]
 entityModel.Parent = workspace
 local Primary = entityModel:FindFirstChildWhichIsA("BasePart")
 entityModel.PrimaryPart = Primary
-entityModel:SetPrimaryPartCFrame(humrp.CFrame * CFrame.new(0, 0, 20))
+entityModel:SetPrimaryPartCFrame(humrp.CFrame * CFrame.new(0, 0, 100))
 
 RunService.Heartbeat:Connect(function(dt)
     if not Move or not entityModel or not entityModel.PrimaryPart or not humrp then return end
@@ -27,7 +27,7 @@ if entityPart then
     entityPart.Touched:Connect(function(hit)
         local h = hit.Parent and hit.Parent:FindFirstChild("Humanoid")
         if h and hit:IsDescendantOf(chr) then
-            h:TakeDamage(100)
+            h:TakeDamage(10)
             local stats = game:GetService("ReplicatedStorage").GameStats
             if stats:FindFirstChild("Player_" .. plr.Name) then
                 stats["Player_" .. plr.Name].Total.DeathCause.Value = "The#Boiled!One↑"
