@@ -10,6 +10,9 @@ game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Mod
 -- Uneasy Timothy
 game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare.Scare.SoundId = "rbxassetid://7081093332"
 
+--Uneasy Void
+game.ReplicatedStorage.ClientModules.EntityModules.Void.Sound.SoundId =  "rbxassetid://5948464831"
+
 --Uneasy Darkness
 game.Workspace.Ambience_Dark.SoundId = "rbxassetid://5521959695"
 game.Workspace.Ambience_Dark.PlaybackSpeed = 1.1
