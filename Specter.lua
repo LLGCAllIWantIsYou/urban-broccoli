@@ -1,3 +1,7 @@
+workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.ParticleEmitter.Enabled = true
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
