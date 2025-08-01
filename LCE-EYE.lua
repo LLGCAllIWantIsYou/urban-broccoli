@@ -120,6 +120,7 @@ end
 local roomEntrance = GetRoom():WaitForChild("RoomEntrance")
 entity.CFrame = roomEntrance.CFrame * CFrame.new(0, 5, -15)
 
+workspace.Goldrebound.RushNew.Attachment.PointLight.Enabled = true
 local isPlaying = false
 local canDamage = false
 local isModelLoaded = true
@@ -143,7 +144,7 @@ runService.RenderStepped:Connect(function()
     local currentTime = tick()
     if canDamage and chr.Humanoid.MoveDirection.magnitude > 0 then
         if currentTime - lastDamageTime >= 1 and currentTime > invincibleTime then
-            chr.Humanoid.Health = chr.Humanoid.Health - 5
+            chr.Humanoid.Health = chr.Humanoid.Health - 10
             lastDamageTime = currentTime
         end
     end
@@ -160,11 +161,13 @@ while true do
     isPlaying = true
     canDamage = true
     invincibleTime = tick() + 0.5
+    workspace.Goldrebound.RushNew.Attachment.PointLight.Color = Color3.fromRGB(255, 0, 0)
     task.wait(3)
 
     playSound.Looped = false
     playSound:Stop()
     isPlaying = false
     canDamage = false
+    workspace.Goldrebound.RushNew.Attachment.PointLight.Color = Color3.fromRGB(0, 255, 0)
     task.wait(2)
 end
