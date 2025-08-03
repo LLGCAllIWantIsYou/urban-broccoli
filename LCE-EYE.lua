@@ -121,9 +121,12 @@ local roomEntrance = GetRoom():WaitForChild("RoomEntrance")
 entity.CFrame = roomEntrance.CFrame * CFrame.new(0, 5, -15)
 
 workspace.Goldrebound.RushNew.Attachment.PointLight.Enabled = true
-local isPlaying = false
-local canDamage = false
+
 local isModelLoaded = true
+local canDamage = false
+local invincibleTime = 0
+local canDamageOnStop = false
+local invincibleTimeOnStop = 0
 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     local goldrebound = workspace:FindFirstChild("Goldrebound")
@@ -135,17 +138,21 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     end
 end)
 
-local lastDamageTime = 0
-local invincibleTime = 0
-
 runService.RenderStepped:Connect(function()
     if not isModelLoaded then return end
-
     local currentTime = tick()
+
     if canDamage and chr.Humanoid.MoveDirection.magnitude > 0 then
         if currentTime - lastDamageTime >= 1 and currentTime > invincibleTime then
             chr.Humanoid.Health = chr.Humanoid.Health - 10
             lastDamageTime = currentTime
+        end
+    end
+
+    if canDamageOnStop and chr.Humanoid.MoveDirection.magnitude == 0 then
+        if currentTime - lastDamageTimeOnStop >= 1 and currentTime > invincibleTimeOnStop then
+            chr.Humanoid.Health = chr.Humanoid.Health - 10
+            lastDamageTimeOnStop = currentTime
         end
     end
 end)
@@ -157,17 +164,22 @@ while true do
     end
 
     playSound.Looped = true
+    workspace.Goldrebound.RushNew.Attachment.PointLight.Color = Color3.fromRGB(255, 0, 0)
     playSound:Play()
-    isPlaying = true
     canDamage = true
     invincibleTime = tick() + 0.5
-    workspace.Goldrebound.RushNew.Attachment.PointLight.Color = Color3.fromRGB(255, 0, 0)
+    lastDamageTime = tick()
     task.wait(3)
 
     playSound.Looped = false
-    playSound:Stop()
-    isPlaying = false
-    canDamage = false
     workspace.Goldrebound.RushNew.Attachment.PointLight.Color = Color3.fromRGB(0, 255, 0)
-    task.wait(2)
+    playSound:Stop()
+    canDamage = false
+    task.wait(0.5)
+    invincibleTimeOnStop = tick() + 0.5
+    canDamageOnStop = true
+    lastDamageTimeOnStop = tick()
+    task.wait(3)
+    canDamageOnStop = false
+    task.wait(0.5)
 end
