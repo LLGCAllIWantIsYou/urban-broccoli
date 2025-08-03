@@ -10,7 +10,7 @@ local humanoid = character:WaitForChild("Humanoid")
 -- q
 local model = Instance.new("Model")
 model.Parent = Workspace
-model.Name = "CustomModel"
+model.Name = "Dear"
 
 -- q
 local modelId = 12815375701
