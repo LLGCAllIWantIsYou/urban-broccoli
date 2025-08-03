@@ -7,6 +7,7 @@ local speed = 15
 local Move = true
 
 local entityModel = game:GetObjects("rbxassetid://138245134546895")[1]
+entityModel.Name = "TheBoiledOne"
 entityModel.Parent = workspace
 local Primary = entityModel:FindFirstChildWhichIsA("BasePart")
 entityModel.PrimaryPart = Primary
